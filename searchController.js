@@ -22,7 +22,10 @@ module.exports.getLatest = function(req, res) {
 	Search.find({}, function(err, searches){
 		if (err) throw err;
 		if (searches) {
-			res.json(searches);
+			var result = searches.reverse().map((search) => {
+				return { term: search.term, when: search.when }
+			})
+			res.json(result);
 		} else {
 			res.json({error: "Couldn't find lastest searches ;("});
 		}

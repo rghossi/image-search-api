@@ -19,7 +19,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/api/imagesearch/:query', searchController.runSearch);
-app.get('/api/lastest/imagesearch', searchController.getLatest);
+app.get('/api/latest/imagesearch', searchController.getLatest);
 
 app.listen(PORT, function () {
   console.log('App listening on port ' + PORT + '!');
