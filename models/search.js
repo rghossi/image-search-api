@@ -6,4 +6,4 @@ var urlSchema = new Schema({
   when: { type: Date, default: Date.now() }
 });
 
-module.exports = mongoose.model('Search', urlSchema);;
+module.exports = mongoose.model('Search', urlSchema);
