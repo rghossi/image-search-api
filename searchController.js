@@ -33,8 +33,10 @@ module.exports.getLatest = function(req, res) {
 }
 
 module.exports.runSearch = function(req, res) {
+	var offset = parseInt(req.query.offset);
 	var query = req.params.query;
 	var params = "q=" + query;
+	if (offset && typeof offset === "number") params += "&offset=" + offset;
 	var url = "https://api.cognitive.microsoft.com/bing/v5.0/images/search?" + params;
 	var options = {
 		url: url,
