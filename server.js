@@ -18,6 +18,8 @@ app.get('/', function (req, res) {
 	res.send("Hello");
 });
 
+app.get('/api/lastest/imagesearch', searchController.getLatest);
+
 app.listen(PORT, function () {
   console.log('App listening on port ' + PORT + '!');
 });
